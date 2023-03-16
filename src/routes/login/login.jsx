@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import { SignupButton } from "../../components/buttons/buttons";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { userContext } from "../../context/user.context";
 
 const defaultFormFields = {
   email: "",
@@ -10,10 +11,11 @@ const defaultFormFields = {
 };
 
 const Login = () => {
+  const { currentUser, setCurrentUser } = useContext(userContext);
   const navigate = useNavigate();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  // console.log(formFields);
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
@@ -25,12 +27,14 @@ const Login = () => {
   };
 
   const submitHandler = (e) => {
-    const user = { email, password };
+    const user = { email, password, role: "user" };
     console.log(user);
     e.preventDefault();
+    setCurrentUser(user);
     resetFormFields();
     navigate("/admin");
   };
+
   return (
     <div>
       <section className="vh-100 main-section">
