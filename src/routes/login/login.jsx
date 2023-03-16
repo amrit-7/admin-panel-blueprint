@@ -1,7 +1,7 @@
 import { SignupButton } from "../../components/buttons/buttons";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { userContext } from "../../context/user.context";
 
@@ -11,7 +11,7 @@ const defaultFormFields = {
 };
 
 const Login = () => {
-  const { currentUser, setCurrentUser } = useContext(userContext);
+  const { setCurrentUser } = useContext(userContext);
   const navigate = useNavigate();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
@@ -27,12 +27,16 @@ const Login = () => {
   };
 
   const submitHandler = (e) => {
-    const user = { email, password, role: "user" };
-    console.log(user);
-    e.preventDefault();
-    setCurrentUser(user);
-    resetFormFields();
-    navigate("/admin");
+    if (email === "") {
+      alert("Enter Email and Password");
+    } else {
+      const user = { email, password, role: "admin" };
+      localStorage.setItem("user", JSON.stringify(user));
+      e.preventDefault();
+      setCurrentUser(user);
+      resetFormFields();
+      navigate("/admin");
+    }
   };
 
   return (
