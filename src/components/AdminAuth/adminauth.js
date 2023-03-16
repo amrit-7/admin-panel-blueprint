@@ -7,8 +7,9 @@ import { userContext } from "../../context/user.context";
 export const Admin = ({ children }) => {
   const { currentUser } = useContext(userContext);
   console.log(currentUser);
+  const user = JSON.parse(localStorage.getItem("user"));
 
-  if (currentUser.role === USER_ROLES.ADMIN) {
+  if (user.role === USER_ROLES.ADMIN) {
     return <Fragment>{children}</Fragment>;
   } else {
     return <Forbidden />;
