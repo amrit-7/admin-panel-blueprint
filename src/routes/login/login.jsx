@@ -35,7 +35,7 @@ const Login = () => {
       e.preventDefault();
       setCurrentUser(user);
       resetFormFields();
-      navigate("/admin");
+      navigate("/");
     }
   };
 

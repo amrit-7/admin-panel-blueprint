@@ -1,4 +1,5 @@
 import { Breadcrumb } from "react-bootstrap";
+import UserTable from "../../components/table/table";
 
 const Users = () => {
   return (
@@ -8,6 +9,7 @@ const Users = () => {
         <Breadcrumb.Item href="/admin/users">Users</Breadcrumb.Item>
       </Breadcrumb>
       <h1> Users </h1>
+      <UserTable />
     </div>
   );
 };

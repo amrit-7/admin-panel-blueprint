@@ -8,12 +8,11 @@ const Layout = () => {
   return (
     <Fragment>
       <Topbar />
-      <div classname="header"></div>
-      <div className="sidebar">
-        <Side />
-      </div>
-      <div className="main-content">
-        <Outlet />
+      <div className="parent">
+        <Side className="sidebar" />
+        <div className="content">
+          <Outlet />
+        </div>
       </div>
     </Fragment>
   );
