@@ -77,6 +77,7 @@ const Login = () => {
                             value={email}
                             className="form-control form-control-lg"
                             onChange={changeHandler}
+                            autoComplete="off"
                           />
                           <label className="form-label" for="form2Example17">
                             Email address

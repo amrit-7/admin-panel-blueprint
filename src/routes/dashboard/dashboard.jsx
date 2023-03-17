@@ -8,8 +8,14 @@ const Dashboard = () => {
 
     if (show) {
       return (
-        <Alert variant="success" onClose={() => setShow(false)} dismissible>
+        <Alert
+          className="pb-0"
+          variant="success"
+          onClose={() => setShow(false)}
+          dismissible
+        >
           <Alert.Heading>Welcome to the Admin Panel!!</Alert.Heading>
+          <p> Hello Admin </p>
         </Alert>
       );
     }
