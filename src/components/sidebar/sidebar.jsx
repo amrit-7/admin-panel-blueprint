@@ -8,7 +8,7 @@ const Side = () => {
   return (
     <Fragment>
       <div className="sidebar" style={{ display: "flex", height: "100vh" }}>
-        <Sidebar>
+        <Sidebar backgroundColor="#F7F7F7">
           <CollapseButton onClick={() => collapseSidebar()}></CollapseButton>
           <Menu className="pb-4">
             <Link to="/admin">
