@@ -7,7 +7,7 @@ const Side = () => {
   const { collapseSidebar } = useProSidebar();
   return (
     <Fragment>
-      <div className="sidebar" style={{ display: "flex", height: "100vh" }}>
+      <div style={{ display: "flex", height: "90vh" }}>
         <Sidebar backgroundColor="#F7F7F7">
           <CollapseButton onClick={() => collapseSidebar()}></CollapseButton>
           <Menu className="pb-4">

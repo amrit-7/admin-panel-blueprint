@@ -3,7 +3,7 @@ import UserTable from "../../components/table/table";
 
 const Users = () => {
   return (
-    <div className="content">
+    <div>
       <Breadcrumb>
         <Breadcrumb.Item href="/admin">Admin</Breadcrumb.Item>
         <Breadcrumb.Item href="/admin/users">Users</Breadcrumb.Item>
