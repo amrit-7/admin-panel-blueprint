@@ -6,7 +6,7 @@ import { userContext } from "../../context/user.context";
 
 export const Admin = ({ children }) => {
   const { currentUser } = useContext(userContext);
-  console.log(currentUser);
+  // console.log(currentUser);
   const user = JSON.parse(localStorage.getItem("user"));
 
   if (user.role === USER_ROLES.ADMIN) {

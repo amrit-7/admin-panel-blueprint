@@ -1,0 +1,15 @@
+.btn i {
+  color: white;
+}
+.btn {
+  outline: 1px solid red;
+  i {
+    color: red;
+  }
+}
+.btn:hover {
+  background-color: rgb(255, 0, 0);
+  i {
+    color: white;
+  }
+}

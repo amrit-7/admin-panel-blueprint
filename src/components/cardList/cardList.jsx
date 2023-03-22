@@ -15,7 +15,7 @@ const CardList = () => {
   return (
     <div className="card-list">
       {users.map((user) => {
-        return <Cards user={user} />;
+        return <Cards key={user.id} user={user} />;
       })}
     </div>
   );

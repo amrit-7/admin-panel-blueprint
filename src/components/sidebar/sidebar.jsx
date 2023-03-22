@@ -2,13 +2,14 @@ import { Fragment } from "react";
 import { Sidebar, Menu, MenuItem, useProSidebar } from "react-pro-sidebar";
 import CollapseButton from "../collapseButton/collapseButton";
 import { Link } from "react-router-dom";
+import "./sidebar.scss";
 
 const Side = () => {
   const { collapseSidebar } = useProSidebar();
   return (
     <Fragment>
-      <div style={{ display: "flex", height: "90vh" }}>
-        <Sidebar backgroundColor="#F7F7F7">
+      <div className="side" style={{ display: "flex", height: "90vh" }}>
+        <Sidebar backgroundColor="#F7F7F7" collapsedWidth="70px">
           <CollapseButton onClick={() => collapseSidebar()}></CollapseButton>
           <Menu className="pb-4">
             <Link to="/admin">
